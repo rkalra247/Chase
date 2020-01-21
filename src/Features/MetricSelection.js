@@ -1,10 +1,12 @@
 import React from 'react'
-import { useQuery } from '@apollo/react-hooks'
+import { useApolloClient, useQuery } from '@apollo/react-hooks'
 import { MultiSelect } from '../components/MultiSelect'
 import { GET_METRICS } from '../queries'
 import _ from 'lodash'
 
 export default () => {
+  const client = useApolloClient()
+
   let options = []
   const { loading, error, data = {} } = useQuery(GET_METRICS)
   const serverResults = _.get(data, 'getMetrics', []).sort()
@@ -20,7 +22,11 @@ export default () => {
   return (
     <div style={{ width: '95%', margin: '10px auto', boxSizing: 'border-box' }}>
       <MultiSelect options={options} onChange={(e) => {
-        console.log(e)
+        const result = e.map(data => data.value)
+        client.writeData({ data: {
+          selections: result,
+          selectionTime: Date.now()
+        } })
       }} loading={loading} error={error} />
     </div>
   )

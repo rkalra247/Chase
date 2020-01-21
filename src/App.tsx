@@ -25,7 +25,13 @@ const cache = new InMemoryCache();
 
 const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
   cache,
-  link: httpLink
+  link: httpLink,
+  resolvers: {
+    Query: {
+      selections: () => ([]),
+      selectionTime: () => (0)
+    }
+  }
 });
 
 const store = createStore();
