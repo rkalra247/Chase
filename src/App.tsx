@@ -9,6 +9,24 @@ import Header from './components/Header';
 import Wrapper from './components/Wrapper';
 import NowWhat from './components/NowWhat';
 
+import { ApolloClient } from 'apollo-client';
+import { ApolloProvider } from '@apollo/react-hooks';
+import { HttpLink } from 'apollo-link-http';
+import { InMemoryCache, NormalizedCacheObject } from 'apollo-cache-inmemory';
+
+
+// Create an http link:
+const httpLink = new HttpLink({
+  uri: 'https://react.eogresources.com/graphql',
+});
+
+const cache = new InMemoryCache();
+
+const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
+  cache,
+  link: httpLink
+});
+
 const store = createStore();
 const theme = createMuiTheme({
   palette: {
@@ -25,6 +43,7 @@ const theme = createMuiTheme({
 });
 
 const App = () => (
+  <ApolloProvider client={client}>
   <MuiThemeProvider theme={theme}>
     <CssBaseline />
     <Provider store={store}>
@@ -35,6 +54,7 @@ const App = () => (
       </Wrapper>
     </Provider>
   </MuiThemeProvider>
+  </ApolloProvider>
 );
 
 export default App;
