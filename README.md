@@ -59,12 +59,11 @@ Technical decisions and overview of how I would plan to tackle this app.
             - Error State - `Error: Cannot retrieve Metric for Water Temp`
             - Loading State - Loading Icon
             - Normal State - Shows name, value and unit, time, and color
-        3. Line Graph - Component that displays the graph over time
+        3. ~~Line Graph - Component that displays the graph over time~~
             - Zero State - When nothing is selected, prompt users to select.
             - Graph State - Displays graphs
                 - Color must match the color for the metric
                 - Y axis must be available for each metric
-
         Helper functions may be required for step 3 to split data array into correct number of components.
 
     3. Setup ApolloClient
@@ -84,6 +83,7 @@ Technical decisions and overview of how I would plan to tackle this app.
 In building this app with limited time, a few tradeoffs had to be made.
 
 1. Redux will not be used. This is because ApolloClient has the ability to manage client side state, making redux unnecessary.
+2. TypeScript is not used due to time due to lack of familarity with libraries required for this project. TypeScript may cause type issues and add complexity.
 
 # Progress
 
