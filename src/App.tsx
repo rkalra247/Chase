@@ -10,6 +10,7 @@ import Wrapper from './components/Wrapper';
 import NowWhat from './components/NowWhat';
 import MetricCardList from './Features/MetricCardList';
 import MetricSelection from './Features/MetricSelection';
+import MetricGraph from './Features/MetricGraph';
 
 import { ApolloClient } from 'apollo-client';
 import { ApolloProvider } from '@apollo/react-hooks';
@@ -59,6 +60,8 @@ const App = () => (
         <Header />
         <MetricSelection />
         <MetricCardList />
+        <MetricGraph />
+
         <NowWhat />
         <ToastContainer />
       </Wrapper>
