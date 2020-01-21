@@ -51,7 +51,7 @@ Technical decisions and overview of how I would plan to tackle this app.
     1. ~~Setup Story Book~~
         - `npx -p @storybook/cli sb init` 
     2. Create components that our application would need:
-        1. MultiSelect - Component that allows users to select metrics from dropdown.
+        1. ~~MultiSelect - Component that allows users to select metrics from dropdown.~~
             - Should correctly display one and multiple selected metrics correctly
             - Loading State - Should be disabled while retrieving a list of available metrics
             - Error - Should be disabled on error state.
