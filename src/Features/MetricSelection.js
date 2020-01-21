@@ -2,6 +2,7 @@ import React from 'react'
 import { useApolloClient, useQuery } from '@apollo/react-hooks'
 import { MultiSelect } from '../components/MultiSelect'
 import { GET_METRICS } from '../queries'
+import { setMetricColors } from '../lib/colors'
 import _ from 'lodash'
 
 export default () => {
@@ -10,6 +11,7 @@ export default () => {
   let options = []
   const { loading, error, data = {} } = useQuery(GET_METRICS)
   const serverResults = _.get(data, 'getMetrics', []).sort()
+  setMetricColors(serverResults)
   if (serverResults.length) {
     options = serverResults.map(value => {
       return {
