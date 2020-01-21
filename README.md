@@ -9,6 +9,12 @@ Provided sample demo:
 
 ![Graph Image](https://i.postimg.cc/yYp9mjFB/Screen-Shot-2020-01-20-at-9-40-09-PM.png)
 
+# Setup / How to Run
+
+## Storybook
+[Storybook](https://storybook.js.org/docs/guides/guide-react/) lets you view components that are present in your app. 
+- `yarn storybook -p 3028` to start storybook on port 3028
+
 # Step 0 - Looking at resources
 
 Resources that you get to start with:
@@ -42,7 +48,8 @@ Technical decisions and overview of how I would plan to tackle this app.
     - Storybook - Allows us to visually see, plan, and design all the different states of a component that we will need to use to power our app. Due to the nature of this project, this method is superior over jest snapshot testing because we are building from scratch and UI will likely change often. We need strong UI cues.
     - Unit Testing - We can use Jest for unit testing after we plan out our application and how to pass data between components and how to format data.
 - GamePlan - High level overview of the different steps we should follow to finish this project. Each point would be a commit.
-    1. Setup Story Book
+    1. ~~Setup Story Book~~
+        - `npx -p @storybook/cli sb init` 
     2. Create components that our application would need:
         1. MultiSelect - Component that allows users to select metrics from dropdown.
             - Should correctly display one and multiple selected metrics correctly
@@ -79,5 +86,4 @@ In building this app with limited time, a few tradeoffs had to be made.
 1. Redux will not be used. This is because ApolloClient has the ability to manage client side state, making redux unnecessary.
 
 # Progress
-
 
