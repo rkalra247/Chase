@@ -66,11 +66,11 @@ Technical decisions and overview of how I would plan to tackle this app.
                 - Y axis must be available for each metric
         Helper functions may be required for step 3 to split data array into correct number of components.
 
-    3. Setup ApolloClient
+    3. ~~Setup ApolloClient~~
     4. Create feature components:
-        1. MetricSelection - Loads all metrics and sends data into MultiSelect component.
+        1. ~~MetricSelection - Loads all metrics and sends data into MultiSelect component.~~
             - Should update client side cache with user selection
-        2. MetricCardList - List of cards powered by Card component to be displayed based on user selections. (Not realtime)
+        2. ~~MetricCardList - List of cards powered by Card component to be displayed based on user selections. (Not realtime)~~
             - Implement color library to set and retrieve metric color. MetricCard must display correct color.
         3. MetricGraph - Line graphs powered by LineGraph to be displayed based on user selections. 
             - Must continue to persist even as new data is being fetched (in loading state)

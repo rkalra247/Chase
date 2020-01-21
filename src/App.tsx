@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from './components/Header';
 import Wrapper from './components/Wrapper';
 import NowWhat from './components/NowWhat';
+import MetricCardList from './Features/MetricCardList';
 import MetricSelection from './Features/MetricSelection';
 
 import { ApolloClient } from 'apollo-client';
@@ -57,6 +58,7 @@ const App = () => (
       <Wrapper>
         <Header />
         <MetricSelection />
+        <MetricCardList />
         <NowWhat />
         <ToastContainer />
       </Wrapper>
