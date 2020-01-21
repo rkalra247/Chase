@@ -55,7 +55,7 @@ Technical decisions and overview of how I would plan to tackle this app.
             - Should correctly display one and multiple selected metrics correctly
             - Loading State - Should be disabled while retrieving a list of available metrics
             - Error - Should be disabled on error state.
-        2. Card - Component that display a card for a metric.
+        2. ~~Card - Component that display a card for a metric.~~
             - Error State - `Error: Cannot retrieve Metric for Water Temp`
             - Loading State - Loading Icon
             - Normal State - Shows name, value and unit, time, and color
