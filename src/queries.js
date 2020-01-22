@@ -26,3 +26,14 @@ query getMultipleMeasurements($metrics: [MeasurementQuery]){
   }
 }
 `
+
+export const SUBSCRIBE_METRIC = gql`
+subscription {
+  newMeasurement {
+      metric,
+      at,
+      value,
+      unit
+  }
+}
+`
