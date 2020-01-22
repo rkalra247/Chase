@@ -72,10 +72,10 @@ Technical decisions and overview of how I would plan to tackle this app.
             - Should update client side cache with user selection
         2. ~~MetricCardList - List of cards powered by Card component to be displayed based on user selections. (Not realtime)~~
             - Implement color library to set and retrieve metric color. MetricCard must display correct color.
-        3. MetricGraph - Line graphs powered by LineGraph to be displayed based on user selections. 
+        3. ~~MetricGraph - Line graphs powered by LineGraph to be displayed based on user selections.~~
             - Must continue to persist even as new data is being fetched (in loading state)
             - Colors must be correct.
-    5. Setup ApolloClient to subscribe to realtime data. New data must update client side cache.
+    5. ~~Setup ApolloClient to subscribe to realtime data. New data must update client side cache.~~
     6. Setup RealTime updates for card and graph
 
 # Technical Decisions
@@ -84,6 +84,4 @@ In building this app with limited time, a few tradeoffs had to be made.
 
 1. Redux will not be used. This is because ApolloClient has the ability to manage client side state, making redux unnecessary.
 2. TypeScript is not used due to time due to lack of familarity with libraries required for this project. TypeScript may cause type issues and add complexity.
-
-# Progress
-
+3. Did not have time to setup RealTime updates for graph.
