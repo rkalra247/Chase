@@ -22,7 +22,7 @@ export default () => {
   }
 
   return (
-    <div style={{ width: '95%', margin: '10px auto', boxSizing: 'border-box' }}>
+    <div style={{ marginTop: '25px' }}>
       <MultiSelect options={options} onChange={(e) => {
         const result = e.map(data => data.value)
         client.writeData({ data: {

@@ -13,7 +13,7 @@ export default () => {
   })
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ margin: '15px', textAlign: 'center' }}>
       {mapList}
     </div>
   )

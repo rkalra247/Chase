@@ -7,7 +7,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import 'react-toastify/dist/ReactToastify.css';
 import Header from './components/Header';
 import Wrapper from './components/Wrapper';
-import NowWhat from './components/NowWhat';
 import Subscriber from './components/Subscriber';
 import MetricCardList from './Features/MetricCardList';
 import MetricSelection from './Features/MetricSelection';
@@ -78,6 +77,11 @@ const theme = createMuiTheme({
   },
 });
 
+const containerStyle = {
+  width: '800px',
+  margin: 'auto'
+}
+
 const App = () => (
   <ApolloProvider client={client}>
   <MuiThemeProvider theme={theme}>
@@ -86,11 +90,11 @@ const App = () => (
       <Wrapper>
         <Header />
         <Subscriber />
-        <MetricSelection />
-        <MetricCardList />
-        <MetricGraph />
-
-        <NowWhat />
+        <div style={containerStyle}>
+          <MetricSelection />
+          <MetricCardList />
+          <MetricGraph />
+        </div>
         <ToastContainer />
       </Wrapper>
     </Provider>

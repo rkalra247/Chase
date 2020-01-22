@@ -19,7 +19,7 @@ export default ({ metric }) => {
   const dateObj = new Date(at)
   const subTitle = dateObj.toLocaleTimeString()
   return (
-    <div style={{ margin: '5px' }}>
+    <div style={{ margin: '5px', display: 'inline-block' }}>
       <ValueDisplay title={title} value={metricValue} subTitle={subTitle} color={color} loading={loading} error={error} />
     </div>
   )
