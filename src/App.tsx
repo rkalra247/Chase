@@ -8,6 +8,33 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from './components/Header';
 import Wrapper from './components/Wrapper';
 import NowWhat from './components/NowWhat';
+import MetricCardList from './Features/MetricCardList';
+import MetricSelection from './Features/MetricSelection';
+import MetricGraph from './Features/MetricGraph';
+
+import { ApolloClient } from 'apollo-client';
+import { ApolloProvider } from '@apollo/react-hooks';
+import { HttpLink } from 'apollo-link-http';
+import { InMemoryCache, NormalizedCacheObject } from 'apollo-cache-inmemory';
+
+
+// Create an http link:
+const httpLink = new HttpLink({
+  uri: 'https://react.eogresources.com/graphql',
+});
+
+const cache = new InMemoryCache();
+
+const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
+  cache,
+  link: httpLink,
+  resolvers: {
+    Query: {
+      selections: () => ([]),
+      selectionTime: () => (0)
+    }
+  }
+});
 
 const store = createStore();
 const theme = createMuiTheme({
@@ -25,16 +52,22 @@ const theme = createMuiTheme({
 });
 
 const App = () => (
+  <ApolloProvider client={client}>
   <MuiThemeProvider theme={theme}>
     <CssBaseline />
     <Provider store={store}>
       <Wrapper>
         <Header />
+        <MetricSelection />
+        <MetricCardList />
+        <MetricGraph />
+
         <NowWhat />
         <ToastContainer />
       </Wrapper>
     </Provider>
   </MuiThemeProvider>
+  </ApolloProvider>
 );
 
 export default App;
