@@ -1,6 +1,4 @@
 
-me-React
-
 # Goal
 
 Your mission, dear developer, is to create a working dashboard which visualizes the real time and historical values of a hypothetical set of equipment in the field. The equipment publishes its data every 1.3 seconds
@@ -17,8 +15,8 @@ Provided sample demo:
 - `yarn start` to start the app 
 
 ### Demo
-[https://chase.hustleneversleeps.me](Demo App)  
-[https://story.hustleneversleeps.me](StoryBook)  
+[Demo App](https://chase.hustleneversleeps.me)  
+[Storybook](https://story.hustleneversleeps.me)  
 
 # Step 0 - Looking at resources
 
