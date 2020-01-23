@@ -9,6 +9,12 @@ Provided sample demo:
 
 ![Graph Image](https://i.postimg.cc/yYp9mjFB/Screen-Shot-2020-01-20-at-9-40-09-PM.png)
 
+# Setup / How to Run
+
+## Storybook
+[Storybook](https://storybook.js.org/docs/guides/guide-react/) lets you view components that are present in your app. 
+- `yarn storybook -p 3028` to start storybook on port 3028
+
 # Step 0 - Looking at resources
 
 Resources that you get to start with:
@@ -42,22 +48,22 @@ Technical decisions and overview of how I would plan to tackle this app.
     - Storybook - Allows us to visually see, plan, and design all the different states of a component that we will need to use to power our app. Due to the nature of this project, this method is superior over jest snapshot testing because we are building from scratch and UI will likely change often. We need strong UI cues.
     - Unit Testing - We can use Jest for unit testing after we plan out our application and how to pass data between components and how to format data.
 - GamePlan - High level overview of the different steps we should follow to finish this project. Each point would be a commit.
-    1. Setup Story Book
+    1. ~~Setup Story Book~~
+        - `npx -p @storybook/cli sb init` 
     2. Create components that our application would need:
-        1. MultiSelect - Component that allows users to select metrics from dropdown.
+        1. ~~MultiSelect - Component that allows users to select metrics from dropdown.~~
             - Should correctly display one and multiple selected metrics correctly
             - Loading State - Should be disabled while retrieving a list of available metrics
             - Error - Should be disabled on error state.
-        2. Card - Component that display a card for a metric.
+        2. ~~Card - Component that display a card for a metric.~~
             - Error State - `Error: Cannot retrieve Metric for Water Temp`
             - Loading State - Loading Icon
             - Normal State - Shows name, value and unit, time, and color
-        3. Line Graph - Component that displays the graph over time
+        3. ~~Line Graph - Component that displays the graph over time~~
             - Zero State - When nothing is selected, prompt users to select.
             - Graph State - Displays graphs
                 - Color must match the color for the metric
                 - Y axis must be available for each metric
-
         Helper functions may be required for step 3 to split data array into correct number of components.
 
     3. Setup ApolloClient
@@ -77,7 +83,7 @@ Technical decisions and overview of how I would plan to tackle this app.
 In building this app with limited time, a few tradeoffs had to be made.
 
 1. Redux will not be used. This is because ApolloClient has the ability to manage client side state, making redux unnecessary.
+2. TypeScript is not used due to time due to lack of familarity with libraries required for this project. TypeScript may cause type issues and add complexity.
 
 # Progress
-
 
