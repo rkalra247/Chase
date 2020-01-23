@@ -14,6 +14,11 @@ Provided sample demo:
 ## Storybook
 [Storybook](https://storybook.js.org/docs/guides/guide-react/) lets you view components that are present in your app. 
 - `yarn storybook -p 3028` to start storybook on port 3028
+- `yarn start` to start the app 
+
+### Demo
+[https://chase.hustleneversleeps.me](Demo App)  
+[https://story.hustleneversleeps.me](StoryBook)  
 
 # Step 0 - Looking at resources
 
